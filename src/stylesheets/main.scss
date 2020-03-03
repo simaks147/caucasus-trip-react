@@ -14,8 +14,8 @@
 //@import "vendor/fontawesome/scss/fontawesome";
 //@import "vendor/fontawesome/scss/solid";
 //@import "vendor/fontawesome/scss/brands";
-@import "utils/**/*";
+@import "utils/module";
 @import "common/global";
-@import "slices/**/*";
-@import "components/**/*";
-@import "layouts/**/*";
+//@import "slices/module";
+//@import "components/module";
+@import "layouts/module";
