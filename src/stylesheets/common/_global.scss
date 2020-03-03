@@ -1,0 +1,74 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    //font-family: $font;
+    //font-size: $font-mobile-size-base;
+    line-height: 1.45;
+    font-weight: 400;
+    font-style: normal;
+    color: $theme-color2;
+    background-color: #f7f7f7;
+    margin: 0;
+
+    @include media($s) {
+        //font-size: $font-size-base;
+    }
+
+    //&:not(.js-loaded) * {
+    //    transition: none;
+    //}
+
+    p {
+        margin: 0;
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    img {
+        display: block;
+        height: auto;
+    }
+
+    ul, ol {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    a {
+        //color: $theme-color3;
+        transition: color .3s;
+        text-decoration: none;
+    }
+
+    a, button {
+        cursor: pointer;
+    }
+
+    a, button, input, textarea {
+        font-family: inherit;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button, input, textarea {
+        background: none;
+        padding: 0;
+        border: none;
+    }
+}

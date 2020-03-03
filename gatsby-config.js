@@ -1,3 +1,6 @@
+const { apiEndpoint } = require('./prismic-configuration');
+var repo = /([^\/]+)\.prismic\.io/.exec(apiEndpoint);
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -6,6 +9,22 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-prismic-graphql`,
+      options: {
+        repositoryName: repo[1],
+        path: '/preview',
+        previews: true,
+        //accessToken: '...',
+        // pages: [{
+        //   type: 'Trip',
+        //   match: '/trips/:uid',
+        //   path: '/trip',
+        //   component: require.resolve('./src/templates/trip.js')
+        // }]
+      }
+    },
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -1,0 +1,21 @@
+//@import "common/fonts";
+@import "common/variables";
+
+/** Import everything from autoload */
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+@import "~normalize-scss/sass/normalize";
+
+/** Import theme styles */
+//@import "vendor/fontawesome/scss/fontawesome";
+//@import "vendor/fontawesome/scss/solid";
+//@import "vendor/fontawesome/scss/brands";
+@import "utils/**/*";
+@import "common/global";
+@import "slices/**/*";
+@import "components/**/*";
+@import "layouts/**/*";
