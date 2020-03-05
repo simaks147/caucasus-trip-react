@@ -1,74 +1,96 @@
-*, *:before, *:after {
+html, html * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-}
-
-html {
-    overflow-x: hidden;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    overflow-x: hidden;
-    position: relative;
-    //font-family: $font;
-    //font-size: $font-mobile-size-base;
-    line-height: 1.45;
-    font-weight: 400;
-    font-style: normal;
-    color: $theme-color2;
-    background-color: #f7f7f7;
     margin: 0;
+    padding: 0;
+}
 
-    @include media($s) {
-        //font-size: $font-size-base;
+ol, ul {
+    list-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+b {
+    font-weight: normal;
+}
+
+
+// extends
+%drag-dest {
+    width: 32%;
+    padding: .6em;
+    margin: 1.2em 0;
+    border: 1px solid $grayVeryLight;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px $grayVeryLight;
+    -webkit-box-shadow: 0 1px 2px $grayVeryLight;
+    background-color: $white;
+
+    &:hover {
+        cursor: move;
     }
 
-    //&:not(.js-loaded) * {
-    //    transition: none;
-    //}
+    &.city {
 
-    p {
-        margin: 0;
-    }
-
-    figure {
-        margin: 0;
-    }
-
-    img {
-        display: block;
-        height: auto;
-    }
-
-    ul, ol {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-    a {
-        //color: $theme-color3;
-        transition: color .3s;
-        text-decoration: none;
-    }
-
-    a, button {
-        cursor: pointer;
-    }
-
-    a, button, input, textarea {
-        font-family: inherit;
-
-        &:focus {
-            outline: none;
+        @media screen and (min-width: $mediumMax) {
+            background: {
+                image: url('../img/img-city.png');
+                size: 10%;
+            }
         }
     }
 
-    button, input, textarea {
-        background: none;
-        padding: 0;
-        border: none;
+    @media screen and (min-width: $mediumAver) {
+        width: 100%;
+        background: {
+            image: url('../img/img-mountains.png');
+            repeat: no-repeat;
+            position: 95% 50%;
+            size: 15%;
+        }
+    }
+
+    @media screen and (min-width: $mediumMax) {
+        padding: .9em;
+    }
+
+    h5 {
+        @include font(latolight, sans-serif, 1em);
+        color: $grayLight;
+        text-align: center;
+
+        @media screen and (min-width: $smallMax) {
+            font-size: 1.2em;
+        }
+
+        @media screen and (min-width: $mediumAver) {
+            text-align: left;
+        }
+
+        @media screen and (min-width: $mediumMax) {
+            font-size: 1.5em;
+        }
+    }
+
+    p {
+        display: none;
+        @include font(latomedium, sans-serif, .85em);
+        color: $grayVeryLight;
+
+        @media screen and (min-width: $mediumAver) {
+            display: block;
+        }
+
+        b {
+            color: $blueLight;
+            @include font(latolight, sans-serif);
+        }
+    }
+
+    .remove-dest {
+        display: none;
     }
 }

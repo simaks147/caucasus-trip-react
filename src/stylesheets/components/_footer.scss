@@ -1,0 +1,69 @@
+.main-footer {
+    width: 100%;
+    padding: 9%;
+    position: relative;
+    background-color: $grayVeryDark;
+
+    @media screen and (min-width: $smallAver) {
+        background: {
+            image: url('../img/footer-bg.png');
+            repeat: no-repeat;
+            color: $grayVeryDark;
+            size: 100%;
+            position: bottom;
+        }
+    }
+
+    .social {
+        position: absolute;
+        top: 5%;
+        right: 9%;
+        display: none;
+
+        @media screen and (min-width: $smallAver) {
+            display: block;
+        }
+
+        .fa-stack {
+            color: $grayDark;
+            text-decoration: none;
+            @include transition (color, .2s);
+
+            @media screen and (min-width: $mediumMin) {
+                font-size: 1.33333333em;
+            }
+
+            &:hover {
+                color: $gray;
+            }
+
+            .fa-stack-2x {
+
+            }
+
+            .fa-stack-1x {
+                color: $grayVeryDark;
+            }
+        }
+    }
+
+    p {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        color: $grayLight;
+        @include transform( translate(-50%, 50%) );
+        @include font(latoregular, sans-serif, .8em);
+
+        @media screen and (min-width: $smallAver) {
+            bottom: 5%;
+            @include transform( translate(-50%, 0) );
+        }
+
+        @media screen and (min-width: $smallMax) {
+            br {
+                display: none;
+            }
+        }
+    }
+}

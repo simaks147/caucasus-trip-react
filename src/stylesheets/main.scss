@@ -1,7 +1,7 @@
-//@import "common/fonts";
+@import "common/fonts";
+@import "vendor/font-awesome";
 @import "common/variables";
 
-/** Import everything from autoload */
 /**
  * Import npm dependencies
  *
@@ -11,11 +11,8 @@
 @import "~normalize-scss/sass/normalize";
 
 /** Import theme styles */
-//@import "vendor/fontawesome/scss/fontawesome";
-//@import "vendor/fontawesome/scss/solid";
-//@import "vendor/fontawesome/scss/brands";
 @import "utils/module";
 @import "common/global";
 //@import "slices/module";
-//@import "components/module";
-@import "layouts/module";
+@import "components/module";
+//@import "layouts/module";
