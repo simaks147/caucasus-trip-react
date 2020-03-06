@@ -1,0 +1,45 @@
+.destination_summary {
+    width: 100%;
+    padding: 6% 9%;
+    background-color: $blueVeryLight;
+
+    @media screen and (min-width: $mediumMin) {
+        padding-right: 34%;
+        padding-left: 12%;
+    }
+
+    h2 {
+        @include font(latoblack, sans-serif, 2em);
+        color: $blueLight;
+        letter-spacing: 3px;
+        margin-bottom: 3%;
+        text-align: center;
+
+        @media screen and (min-width: $smallAver) {
+            @include font(ChunkFive, serif, 2.5em);
+        }
+
+        @media screen and (min-width: $mediumMin) {
+            text-align: left;
+        }
+
+        @media screen and (min-width: $mediumMax) {
+            font-size: 3.5em;
+        }
+
+        strong {
+            color: $blueDark;
+        }
+    }
+
+    p {
+        @include font(latoregular, sans-serif);
+        line-height: 2em;
+        color: $gray;
+
+        @media screen and (min-width: $mediumMax) {
+            font-size: 1.1em;
+        }
+    }
+
+}

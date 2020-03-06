@@ -8,6 +8,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-prismic-graphql`,

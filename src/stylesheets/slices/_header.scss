@@ -183,7 +183,7 @@
                 font-size: 4.7em;
             }
 
-            b {
+            strong {
                 color: $blueDark;
             }
         }
@@ -193,7 +193,6 @@
             display: none;
             line-height: 2em;
             color: $white;
-            margin-bottom: 3%;
 
             @media screen and (min-width: $mediumMin) {
                 display: block;
@@ -216,6 +215,9 @@
             overflow: hidden;
             background: transparent;
             z-index: 0;
+            margin-top: 3%;
+            cursor: pointer;
+
             @include transition (color, .2s);
 
             &::before {

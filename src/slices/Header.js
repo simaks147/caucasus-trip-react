@@ -1,35 +1,27 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import { RichText } from 'prismic-reactjs';
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { linkResolver } from '../utils/linkResolver';
 
-const Header = () => (
+export default ({ slice: {primary: {logo_text, title1, sub_title, button_text} , fields} }) => (
     <header className="scroll-section main-header" data-section="main">
         <div className="main-header_nav animated">
             <nav>
                 <ul>
-                    <li>
-                        <a className="main-header_nav_link" href="#intro">Home</a>
-                    </li>
-                    <li>
-                        <a className="main-header_nav_link" href="#destination_summary">Destination</a>
-                    </li>
-                    <li>
-                        <a className="main-header_nav_link" href="#destination_info">Review</a>
-                    </li>
-                    <li>
-                        <a className="main-header_nav_link" href="#set-ittinery">Ittinery</a>
-                    </li>
-                    <li>
-                        <a className="main-header_nav_link" href="#contact">Contact</a>
-                    </li>
+                    {fields.map((item, index) =>
+                        <li key={index}>
+                            <AnchorLink to={item.nav_link_anchor} className="main-header_nav_link">{item.nav_link_text}</AnchorLink>
+                        </li>
+                    )}
                 </ul>
             </nav>
-            <a href="" className="logo">Caucasus<i>Ttrip</i></a>
+            <Link className="logo" to="/">{logo_text}</Link>
         </div>
         <div className="main-header_slogan animated fadeIn">
-            <h1>Lets get <b>lost</b></h1>
-            <p>An incredible sense of freedom<br></br>and truth merge with the beauty of nature are waiting for you</p>
-            <button>Set ittinery now</button>
+            <RichText render={title1} linkResolver={linkResolver} />
+            <RichText render={sub_title} linkResolver={linkResolver} />
+            <button>{button_text}</button>
         </div>
     </header>
 );
-
-export default Header;

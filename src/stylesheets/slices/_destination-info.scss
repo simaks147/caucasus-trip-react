@@ -1,0 +1,396 @@
+.destination_info {
+    background-color: $blueVeryLight;
+
+    .info_brief {
+        width: 100%;
+        padding: 0 9%;
+        position: relative;
+        display: none;
+
+        @media screen and (min-width: $smallAver) {
+            display: block;
+        }
+
+        @media screen and (min-width: $largeAver) {
+            padding-top: 6%;
+        }
+
+        .slider {
+            width: 100%;
+            position: relative;
+
+            .slider_list {
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+
+                @media screen and (min-width: $smallMax) {
+                    border: 3px solid $white;
+                }
+
+                @media screen and (min-width: $mediumMin) {
+                    border-width: 8px;
+                    border-right-width: 70px;
+                }
+
+                .slider_item {
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+
+                    &.active {
+                        position: relative;
+                        z-index: 2;
+                    }
+
+                    &.inslide {
+                        z-index: 3;
+                    }
+
+                    figure {
+                        width: 100%;
+
+                        img {
+                            width: 100%;
+                            display: block;
+                        }
+                    }
+
+                    article {
+                        height: 100%;
+                        padding: 2%;
+                        background-color: $whiteTransparent;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        line-height: 2em;
+
+                        @media screen and (min-width: $smallMax) {
+                            padding: 6% 3%;
+                        }
+
+                        @media screen and (min-width: $mediumMin) {
+                            width: 65%;
+                        }
+
+                        @media screen and (min-width: $largeMin) {
+                            width: 45%;
+                        }
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            right: 100%;
+                            top: 50%;
+                            border-right: 12px solid $whiteTransparent;
+                            border-top: 12px solid transparent;
+                            border-bottom: 12px solid transparent;
+                            @include transform( translateY(-50%) );
+                        }
+
+                        figure {
+                            display: none;
+
+                            @media screen and (min-width: $mediumMax) {
+                                display: block;
+                            }
+
+                            img {
+                                width: auto;
+                            }
+                        }
+
+                        h3 {
+                            @include font(latobold, sans-serif, 1.8em);
+                            color: $blueLight;
+                            padding: 2% 0;
+                            text-align: center;
+
+                            @media screen and (min-width: $mediumMin) {
+                                padding: 4% 0;
+                                text-align: left;
+                            }
+
+                            @media screen and (min-width: $mediumMax) {
+                                @include font(latolight, sans-serif, 1.8em);
+                            }
+                        }
+
+                        p {
+                            @include font(latoregular, sans-serif);
+                            color: $gray;
+
+                            @media screen and (min-width: $mediumMin) {
+                                @include font(latobold, sans-serif);
+                            }
+
+                            @media screen and (min-width: $mediumMax) {
+                                font-size: 1.1em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .slider_control {
+
+                a {
+                    text-decoration: none;
+                    position: absolute;
+                    z-index: 4;
+                    top: 19%;
+                    color: $grayLight;
+
+                    @media screen and (min-width: $smallMax) {
+                        top: 26%;
+                    }
+
+                    @media screen and (min-width: $mediumMin) {
+                        top: 50%;
+                        color: $gray;
+                    }
+
+                    @include transform( translateY(-50%) );
+
+                    &[class~="conrol_button_next"] {
+                        right: 25%;
+
+                        @media screen and (min-width: $smallMax) {
+                            right: 30%;
+                        }
+
+                        @media screen and (min-width: $mediumMin) {
+                            right: 2%;
+                            color: $gray;
+                        }
+
+                        @media screen and (min-width: $mediumMax) {
+                            right: 1%;
+                        }
+
+                    }
+
+                    &[class~="conrol_button_prev"] {
+                        left: 25%;
+
+                        @media screen and (min-width: $smallMax) {
+                            left: 30%;
+                        }
+
+                        @media screen and (min-width: $mediumMin) {
+                            left: 2%;
+                            color: $whiteTransparent;
+                        }
+
+                        @media screen and (min-width: $mediumMax) {
+                            left: 1%;
+                        }
+
+                    }
+
+                    .fa-lg {
+                        @include transition (font-size, .2s);
+
+                        &:hover {
+                            font-size: 2em;
+                        }
+
+                        @media screen and (min-width: $mediumMin) {
+                            font-size: 2em;
+
+                            &:hover {
+                                font-size: 3em;
+                            }
+                        }
+
+                        @media screen and (min-width: $mediumMax) {
+                            font-size: 3em;
+
+                            &:hover {
+                                font-size: 4em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .info_detail {
+        width: 100%;
+        padding: 2% 9%;
+
+        .detail_articles {
+            width: 100%;
+
+            hr {
+                width: 70%;
+                height: 1px;
+                background-color: $blueLight;
+                border: none;
+                margin: 0 auto;
+
+                @media screen and (min-width: $smallAver) {
+                    display: none;
+                }
+            }
+
+            .articles_list {
+                width: 100%;
+                position: relative;
+                display: block;
+
+                @media screen and (min-width: $smallAver) {
+                    display: none;
+                }
+
+                .articles_item {
+                    width: 100%;
+                    overflow: hidden;
+                    opacity: 1;
+
+                    @media screen and (min-width: $smallAver) {
+                        position: absolute;
+                        top: 0;
+                        opacity: 0;
+
+                        &.active {
+                            position: relative;
+                            z-index: 2;
+                            opacity: 1;
+                        }
+                    }
+
+                    h3 {
+                        @include font(latobold, sans-serif, 1.8em);
+                        color: $blueLight;
+                        padding: 2% 0;
+                        text-align: center;
+
+                        @media screen and (min-width: $smallAver) {
+                            display: none;
+                        }
+                    }
+
+                    ul {
+                        width: 100%;
+
+                        li {
+                            width: 100%;
+                            margin: 4% 0;
+                            position: relative;
+
+                            @media screen and (min-width: $largeAver) {
+                                margin: 2% 0;
+                            }
+
+                            article {
+                                width: 100%;
+                                height: 100%;
+                                padding: 3%;
+                                position: static;
+                                left: 0;
+                                top: 0;
+                                line-height: 2em;
+                                background-color: $whiteTransparent;
+
+                                @media screen and (min-width: $largeAver) {
+                                    width: 65%;
+                                    position: absolute;
+
+                                    &::after {
+                                        content: '';
+                                        position: absolute;
+                                        left: 100%;
+                                        top: 50%;
+                                        border-left: 12px solid $whiteTransparent;
+                                        border-top: 12px solid transparent;
+                                        border-bottom: 12px solid transparent;
+                                        @include transform( translateY(-50%) );
+                                    }
+                                }
+
+                                h4 {
+                                    @include font(latolight, sans-serif, 1.8em);
+                                    color: $blueLight;
+                                }
+
+                                p {
+                                    @include font(latoregular, sans-serif);
+                                    color: $gray;
+
+                                    @media screen and (min-width: $mediumMax) {
+                                        font-size: 1.1em;
+                                    }
+                                }
+                            }
+
+                            figure {
+                                display: none;
+                                width: 100%;
+
+                                @media screen and (min-width: $smallAver) {
+                                    display: block;
+                                }
+
+                                img {
+                                    width: 100%;
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .articles_switch {
+                display: none;
+                height: 40px;
+
+                @media screen and (min-width: $smallAver) {
+                    display: block;
+                }
+
+                .switch_button {
+                    width: 60px;
+                    position: relative;
+                    margin: 0 auto;
+                    text-decoration: none;
+                    text-align: center;
+                    color: $blueDark;
+                    display: block;
+
+                    .fa-caret-down {
+                        position: absolute;
+                        top: -.3em;
+                    }
+
+                    .fa-lg {
+                        @include transition (font-size, .2s);
+
+                        &:hover {
+                            font-size: 2em;
+                        }
+
+                        @media screen and (min-width: $mediumMin) {
+                            font-size: 2em;
+
+                            &:hover {
+                                font-size: 3em;
+                            }
+                        }
+
+                        @media screen and (min-width: $mediumMax) {
+                            font-size: 3em;
+
+                            &:hover {
+                                font-size: 4em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+.intro {
+    width: 100%;
+    padding: 6% 9%;
+
+    article {
+        @include clearfix;
+
+        figure {
+            display: none;
+            margin: 0 6% 12% 0;
+
+            @media screen and (min-width: $mediumMin) {
+                display: block;
+                float: left;
+                width: 50%;
+            }
+
+            @media screen and (min-width: $mediumMax) {
+                margin-bottom: 6%;
+            }
+
+            img {
+                max-width: 100%;
+                display: block;
+            }
+        }
+
+        h2 {
+            @include font(latoblack, sans-serif, 2em);
+            color: $blueLight;
+            letter-spacing: 3px;
+            margin-bottom: 3%;
+            text-align: center;
+
+            @media screen and (min-width: $smallAver) {
+                @include font(ChunkFive, serif, 2.5em);
+            }
+
+            @media screen and (min-width: $mediumMin) {
+                text-align: left;
+            }
+
+            @media screen and (min-width: $mediumMax) {
+                font-size: 3.5em;
+            }
+
+            strong {
+                color: $blueDark;
+            }
+        }
+
+        p {
+            @include font(latoregular, sans-serif);
+            line-height: 2em;
+            color: $gray;
+
+            @media screen and (min-width: $mediumMax) {
+                font-size: 1.1em;
+            }
+        }
+    }
+}

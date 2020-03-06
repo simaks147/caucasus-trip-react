@@ -18,6 +18,51 @@ export const query = graphql`
           body {
             ... on PRISMIC_HomeBodyHeader {
               type
+              primary {
+                logo_text
+                title1
+                sub_title
+                button_text
+              }
+              fields {
+                nav_link_text
+                nav_link_anchor
+              }
+            }
+            ... on PRISMIC_HomeBodyIntro {
+              type
+              primary {
+                title1
+                text
+                image
+                data_section_attr
+              }
+            }
+            ... on PRISMIC_HomeBodyDestination_summary {
+              type
+              primary {
+                data_section_attr
+                text
+                title1
+              }
+            }
+            ... on PRISMIC_HomeBodyDestination_select {
+              type
+              label
+              primary {
+                caption1
+                caption2
+                caption3
+                caption4
+                data_pic_attr1
+                data_pic_attr2
+                data_pic_attr3
+                data_pic_attr4
+                image1
+                image2
+                image3
+                image4
+              }
             }
           }
         }
@@ -32,10 +77,10 @@ export default ({ data }) => {
     const doc = data.prismic.allHomes.edges.slice(0,1).pop();
     if(!doc) return null;
 
+    console.log(doc.node.body);
 
     return (
         <Layout>
-            {console.log(doc.node)}
             <Helmet>
                 <title>{RichText.asText(doc.node.title)}</title>
             </Helmet>

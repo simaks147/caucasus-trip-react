@@ -2,9 +2,7 @@ import React from 'react';
 import { Link } from 'prismic-reactjs';
 import { linkResolver } from '../utils/linkResolver';
 
-const Footer = ({ social_links, copyright }) => (
-
-
+export default ({ social_links, copyright }) => (
     <footer className="main-footer">
         <div className="social">
             {social_links.map((item, index) =>
@@ -17,5 +15,3 @@ const Footer = ({ social_links, copyright }) => (
         <p>{copyright}</p>
     </footer>
 );
-
-export default Footer;
