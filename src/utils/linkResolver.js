@@ -4,7 +4,7 @@ exports.linkResolver = function linkResolver(doc) {
     return '/';
   }
   if (doc.type === 'trip') {
-    return '/trips/' + doc.uid;
+    return `/destination/${doc.uid}`;
   }
   return '/';
 }

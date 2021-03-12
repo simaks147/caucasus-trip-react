@@ -17,12 +17,12 @@ module.exports = {
         path: '/preview',
         previews: true,
         //accessToken: '...',
-        // pages: [{
-        //   type: 'Trip',
-        //   match: '/trips/:uid',
-        //   path: '/trip',
-        //   component: require.resolve('./src/templates/trip.js')
-        // }]
+        pages: [{
+          type: 'Trip',
+          match: '/destination/:uid',
+          path: '/trip-preview',
+          component: require.resolve('./src/templates/trip.js')
+        }],
       }
     },
     `gatsby-plugin-sass`,

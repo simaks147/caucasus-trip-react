@@ -26,7 +26,7 @@ class Layout extends React.Component {
 export default (props) => (
     <StaticQuery
         query={graphql`
-            query MyQuery {
+            query LayoutQuery {
               prismic {
                 allLayouts {
                   edges {

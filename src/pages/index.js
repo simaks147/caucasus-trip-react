@@ -77,8 +77,6 @@ export default ({ data }) => {
     const doc = data.prismic.allHomes.edges.slice(0,1).pop();
     if(!doc) return null;
 
-    console.log(doc.node.body);
-
     return (
         <Layout>
             <Helmet>
